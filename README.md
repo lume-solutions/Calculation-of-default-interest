@@ -4,7 +4,7 @@
 
 * CodeIgniter 3 (3.1.11)
 * PHPUnit 7.X
-* Bootstrap 4.X
+* Bootstrap 3.X
 * GIT
 * WAMP, MAMP, XAMP, Vagrant, Valet, Docker ....
 
