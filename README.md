@@ -51,3 +51,8 @@ The data from your account card must be exported to a file suitable for import t
 In this task, you need to check the file type and format required for import. Imports should be properly tested. Interest is always counted on today.
 
 > The file should be automatically downloaded to your computer. The file name should be the code (identification number) of the account card and a suitable extension.
+___
+#### Source Control
+Create a free GitHub or Bitbucket repository and push your code to a remote repository. It is important to note that we will also check how you create your commits (message and amount of code per each commit) so take this as an important part of an assignment. We will not check the assignments with only 'initial commit'.
+
+Your README should contain information about how can we set up your project on our machine.
