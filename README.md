@@ -1,82 +1,58 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Calculation-of-default-interest
 
-# Install the book store "local"
+#### Required skills to finish the assignment
 
-### Required
-
+* CodeIgniter 3 (3.1.11)
 * PHPUnit 7.X
+* Bootstrap 3.X
 * GIT
 * WAMP, MAMP, XAMP, Vagrant, Valet, Docker ....
 
+#### Assignment
+
+All tasks are linked to each other and escalate in difficulty. It is necessary to solve the tasks in the order indicated, since without one completed task you cannot proceed to another (in most cases). An asterisk (*) indicates additional tasks that are not required to continue but are recommended.
+
+If the instructions of the assignment are not clear, please ask for a more detailed explanation of the assignment.
 ___
+#### Preparing the environment
+The folder has everything you need for initial development. It is up to you to choose the development environment (IDE) for you, choose the program that is most comfortable for you. We recommend [PhpStorm](https://www.jetbrains.com/phpstorm/).
 
-#### Let's start
+##### Database
+The folder has the database db_dump.sql, which you will need to import into the MySQL database in a previously created zap_IZO schema.
 
-* Clone a repo in local folder
-* Start your server (XAMP, WAMP, ...)
+A username and the password:
 
-#### Open .env.example file in root
-Set your DB configuration:
+> U: IZOBaza2017 <br>
+> P: IZOBaza2017*A
 
-> DB_CONNECTION=mysql<br>
-> DB_HOST=127.0.0.1<br>
-> DB_PORT=3306<br>
-> DB_DATABASE=laravel<br>
-> DB_USERNAME=root<br>
-> DB_PASSWORD=<br>
+You can import the database via a terminal or graphic data as desired.
 
-
-##### Save file to .env (!)
-
+##### CodeIgniter
+Today, you will use the [Codeigniter (CI)](https://codeigniter.com/) PHP framework to connect to the previously imported database and develop the application. Connect the CI to the database via the PDO with the information given in the previous exercise. The framework itself is already ready with the `home.php` view, which you will upgrade in the following tutorials.
+The home view contains HTML code without the main content. Design is solved with the Bootstrap CSS framework.
+After you have successfully connected to the base, continue to the next exercise.
 ___
+#### Debtor account card
+If you looked at the data and tables you imported, you could see that it was the data of the debtor and his account cards. In this task you will output the account card information to the table.
 
-Create a database named the same like in .env => DB_DATABASE<br>
-Add user permission to a database the same like in .env =>  DB_USERNAME | DB_PASSWORD
+![alt text](accountcard.bmp)
 
-Download composer: https://getcomposer.org/download/
-* Install composer
+The account card consists of:
+Identification Numbers 
+* Decision / debtor ID
+* List of expenses / debts and payments
+* The total sum of current debt
+Your account card should be as similar as possible to the illustration above - the table is drawn with Bootstrap and responsive.
+###### The illustration has a button for exporting data - the button has a fontawesome icon (the icon does not exist in the frame itself)
+___
+#### Default interest calculation - IZO application
+However, for every account in the judicial sector, a complex calculation of interest by period is required for completeness. Since implementation of such a calculation is demanding, we will use the [IZO web application](http://izo.sodisce.si/izo-web/spring/izracun?execution=e2s1) on the websites of the Supreme Court of Slovenia. The app allows you to import and export calculation data.
+The data from your account card must be exported to a file suitable for import to the IZO.
+In this task, you need to check the file type and format required for import. Imports should be properly tested. Interest is always counted on today.
 
-Run the following command on your terminal:
+> The file should be automatically downloaded to your computer. The file name should be the code (identification number) of the account card and a suitable extension.
+___
+#### Source Control
+Create a free GitHub or Bitbucket repository and push your code to a remote repository. It is important to note that we will also check how you create your commits (message and amount of code per each commit) so take this as an important part of an assignment. We will not check the assignments with only 'initial commit'.
 
-> composer install<br>
-> php artisan migrate<br>
-> php artisan db:sees<br>
-> php artisan key:generate<br>
-> php artisan serve<br>
-
-#### Laravel development server started: <http://127.0.0.1:8000>
-
-> Administrator login
-
-* admin@book-store.si
-* laravel
-
-> Guest login
-
-* frederic.parker@nolan.org
-* laravel
-
-> For API
-* api token: ecd27b516a83f152142a391fe044e7a09bec306900074713879f887a8a38
-
-> For API test:
-
-* Run in root curl_test.php file on localhost (script is "GET" all book data)
-
-> Modify for all other methods:
-
-Uncomment POST data (change book data array[]) and CURL options CURLOPT_POSTFIELDS for insert or update the book)
-
-> Possible routes for API:
-
-* Route::get('book-store', 'BookController@index');<br>
-* Route::get('book-store/{book}', 'BookController@show');<br>
-* Route::post('book-store/store', 'BookController@store');  // curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");<br>
-* Route::post('book-store/{book}', 'BookController@update'); // curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");<br>
-* Route::delete('book-store/{book}', 'BookController@destroy'); // curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");<br>
-
-
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Your README should contain information about how can we set up your project on our machine.
